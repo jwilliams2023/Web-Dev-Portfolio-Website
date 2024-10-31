@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #000000;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -20,7 +20,7 @@ html {
 nav {
   display: flex;
   justify-content: space-around;
-  background-color: #333;
+  background-color: #0a0a0ace;
   padding: 1rem;
   position: fixed;
   top: 0;
@@ -38,10 +38,6 @@ nav ul {
   /* margin: 0; */
 }
 
-nav h1 {
-  margin-right: auto;
-}
-
 nav a {
   color: white;
   text-decoration: none;
@@ -49,7 +45,6 @@ nav a {
 }
 
 nav a:active {
-  font-weight: bold;
   border-bottom: 2px solid gold;
 }
 
