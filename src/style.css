@@ -17,21 +17,77 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: #646cff;
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+}
+
+a:hover {
+  transition: all 0.3s ease 0s;
+  text-decoration: none;
+  color: #384bf7;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  border-bottom: 2px solid #333;
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  color: #e0e0e0;
+  background-color: #161733;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: #3a3f5c;
+}
+
+.button:active {
+  background-color: #2f355b;
+  box-shadow: none;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+  color: #ccc;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+}
+
 .navbar {
   background-color: #142927;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   top: 0;
   z-index: 1000;
-  /* position: fixed; */
-  padding: 5px;
-  padding-top: 10px;
+  position: sticky;
+  padding: 0 5px;
 }
 
 .navbar h1 {
   margin: 0;
-  font-size: 2rem;
+  font-size: 1.5rem;
   flex-direction: column;
 }
 
@@ -41,18 +97,23 @@ html {
 
 .navbar ul {
   list-style: none;
-  display: inline-block;
-  padding: 0 20px;
+  margin: 0;
+  /* padding: 0 20px; */
 }
 
 .navbar li {
   display: inline-block;
   padding: 0 10px;
+  padding-top: 10px;
 }
 
 .navbar a {
   transition: all 0.3s ease 0s;
-  color: #fff;
+  color: #ffffff;
+}
+
+.navbar a:hover {
+  color: #384bf7;
 }
 
 main {
@@ -63,37 +124,28 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 30px;
-  height: 5vh;
+  padding-top: 40px;
+  height: 10vh;
 }
 
-/* About Section */
-#about {
-  padding: 1rem;
-  max-width: 800px;
-  margin: 0 auto;
-  color: #ddd;
-}
-
-#about h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #fff;
-  border-bottom: 2px solid #333;
-}
-
-/* Projects Section */
-#projects {
+#about, #projects, #experience, #contact {
   padding: 1rem;
   max-width: 800px;
   margin: 0 auto;
 }
 
-#projects h2 {
-  font-size: 2rem;
+#about h3 {
   margin-bottom: 1rem;
-  color: #fff;
   border-bottom: 2px solid #333;
+}
+
+.tool-icons img, 
+p img {
+    width: 30px;
+    height: auto;
+    vertical-align: middle;
+    margin-left: 5px; 
+    margin-right: 5px;
 }
 
 .project-card {
@@ -102,20 +154,6 @@ main {
   padding: 1rem;
   margin-bottom: 1rem;
   background-color: #142927;
-}
-
-#experience {
-  padding: 1rem;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-#experience h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid #333;
-  padding-bottom: 0.5rem;
-  color: #fff;
 }
 
 .experience-entry {
@@ -144,71 +182,15 @@ main {
   font-size: 0.9rem;
 }
 
-ul {
-  list-style-type: disc;
-  padding-left: 1.5rem;
-  margin-top: 0.5rem;
-  color: #ccc;
-}
-
-ul li {
-  margin-bottom: 0.5rem;
-}
-
-#contact {
-  padding: .5rem;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-#contact h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #fff;
-  border-bottom: 2px solid #333;
-}
-
 .contact-info {
   font-size: 1rem;
   color: #ddd;
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: .5rem;
 }
-
-.contact-info span,
-.contact-info a {
-  text-decoration: none;
-}
-
-.contact-info a:hover {
-  color: #646cff;
-}
-
-.section-title {
-  font-size: 2rem;
-  color: #fff;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.button {
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 4px;
-  color: #fff;
-  background-color: #646cff;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.button:hover {
-  background-color: #535bf2;
-}
-
 
 .footer {
-  color: rgba(255, 255, 255, 0.87);
   text-align: center;
   padding: 1.5rem;
   margin-top: 2rem;
@@ -230,19 +212,6 @@ ul li {
 
 .footer-links li {
   display: inline;
-}
-
-a {
-  color: #646cff;
-  text-decoration: none;
-  transition: all 0.3s ease 0s;
-}
-
-a:hover {
-  transition: all 0.3s ease 0s;
-  text-decoration: none;
-  color: #384bf7;
-  border-bottom: 2px solid gold;
 }
 
 @media (prefers-color-scheme: light) {
