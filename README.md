@@ -1,6 +1,6 @@
 # Web Dev Portfolio Website
 
-This project is a personal portfolio website built to re-learn and practice HTML, CSS, and JavaScript in their most basic (vanilla) forms. The goal is to create a clean, functional, and visually appealing website, with an Agile approach to iteratively adding new features and improvements.
+This project is a personal portfolio website built to re-learn and practice HTML, CSS, and JavaScript in their vanilla forms. The goal is to create a clean, functional, and visually appealing website, with an Agile approach to iteratively adding new features and improvements.
 
 ## Agile Workflow
 
@@ -24,7 +24,15 @@ Tasks are organized into **Ongoing** (active work) and **Future Enhancements** (
 - **Git**: Version control to track progress and updates.
 - **Netlify**: Hosting and deployment for easy access and continuous deployment.
 
+## Documentation
+
+- **Vite Documentation**: [Vite Docs](https://vitejs.dev/guide/)
+- **Netlify Documentation**: [Netlify Docs](https://docs.netlify.com/)
+
 ## Live Site
 
 The website is live at [https://josephwilliams.netlify.app/](https://josephwilliams.netlify.app/).
 
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
