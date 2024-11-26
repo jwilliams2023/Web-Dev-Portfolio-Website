@@ -60,6 +60,7 @@ h2 {
 .button:active {
   background-color: #2f355b;
   box-shadow: none;
+  transform: scale(0.95);
 }
 
 ul {
@@ -89,6 +90,7 @@ ul li {
   margin: 0;
   font-size: 1.5rem;
   flex-direction: column;
+  padding-left: 1rem;
 }
 
 .navbar h1 a{
@@ -121,17 +123,45 @@ main {
 }
 
 #introduction {
+  text-align: center;
+  margin-bottom: 2rem;
+  scroll-margin-top: 5rem;
+}
+
+#introduction h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.social-links {
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding-top: 40px;
-  height: 10vh;
+  margin-top: 1rem;
+}
+
+.social-links a {
+  margin: 0 10px;
+}
+
+.social-links img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-links img[src*="Octicons-mark-github.svg"] {
+  filter: invert(1);
+}
+
+.social-links img:hover {
+  transform: scale(1.1);
 }
 
 #about, #projects, #experience, #contact {
   padding: 1rem;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
+  scroll-margin-top: 1rem;
 }
 
 #about h3 {
@@ -147,6 +177,50 @@ p img {
     margin-left: 5px; 
     margin-right: 5px;
 }
+
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+
+.toggle-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #161733;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  gap: 0.5rem;
+}
+
+/* Arrow styling */
+.toggle-button .arrow {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.toggle-button:hover {
+  background-color: #3a3f5c;
+}
+
+.toggle-button:active {
+  background-color: #2a2f4c;
+  transform: scale(0.95);
+}
+
+/* Hidden content styling */
+.hidden-content {
+  display: none;
+}
+
 
 .project-card {
   border: 1px solid #333;
