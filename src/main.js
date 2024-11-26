@@ -25,4 +25,6 @@ export function toggleContent() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', toggleContent);
+document.addEventListener('DOMContentLoaded', () => {
+    toggleContent();
+});
