@@ -5,8 +5,8 @@
     <link rel="icon" type="image/svg+xml" href="src/assets/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Joseph Williams</title>
-    <link rel="stylesheet" href="src/style.css"> 
-    <script type="module" src="/src/main.js"></script>
+    <link rel="stylesheet" href="./src/style.css"> 
+    <script type="module" src="./src/main.js"></script>
   </head>
 
   <nav class="navbar">
@@ -16,7 +16,9 @@
       <li><a href="#projects">Projects</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><button class="button"><a href="src/assets/Joseph_Williams_Resume_2024.pdf" target="_blank" title>Resume</a></button></li>
+      <a href="src/assets/Joseph_Williams_Resume_2025_DS.pdf" target="_blank" title>
+        <li><button class="button">Resume</button></li>
+      </a>
     </ul>
   </nav>
  
@@ -36,7 +38,7 @@
     <section id="about">
       <h2>About Me</h2>
       <p>
-        I am a <b>Computer Science Major + Statistics Minor</b> student at <b>Auburn University</b>, expected to graduate in Fall 2025. Currently, I am a SWE research assistant under <a href="https://akondrahman.github.io/paser/" target="_blank"> <b>Dr. Akond Rahman</b></a>. I am an incoming intern at<a href="https://www.protective.com/about-us" target="_blank"><b> Protective</b></a> for the summer of 2025 as a Data Science Intern.
+        I am a <b>Computer Science Major + Statistics Minor</b> student at <b>Auburn University</b>, expected to graduate in Fall 2025. Currently, I am a SWE research assistant primarily under <a href="https://akondrahman.github.io/paser/" target="_blank"> <b>Dr. Akond Rahman</b></a> and also as a research assistant in Human-Computer Interaction AI research assistant under <a href= "https://eng.auburn.edu/directory/sealscd" target="_blank"><b>Dr. Cheryl Seals</b></a>. I am an incoming intern at<a href="https://www.protective.com/about-us" target="_blank"><b> Protective Life</b></a> for the summer of 2025 as a Data Science Intern.
       </p>
       
       <p>I am continually expanding my skills and learning new technologies through projects in <b>software engineering, data science, and AI/ML</b>.
@@ -99,13 +101,13 @@
         From an early age, I always thought coding was the coolest thing....
       </p>
       <div class="hidden-content" style>
-        <p style="text-indent: 20px;">
-                I remember spending time on various websites, using the "Inspect Element" tool to peek behind the scenes, wondering how everything worked. I would play around with editing or deleting code, amazed at how simple changes could affect the way a website looked or functioned. As a kid, I watched countless YouTube videos, trying to learn more about what went on behind the scenes in coding and technology. This hands-on tinkering and curiosity fueled my passion for tech. In high school, I took coding classes, and it became clear to me that coding was more than just a hobby—it was the profession I wanted to pursue. My brother, who is also a Computer Science graduate with a master's degree, has been a big inspiration and a mentor to me. He has guided me not only in the field but also in learning new tools and technologies, motivating me to continue my path in tech.
+        <p>
+                I remember spending time on various websites, using the "Inspect Element" tool to peek behind the scenes, wondering how everything worked. I would play around with editing or deleting code, amazed at how simple changes could affect the way a website looked or functioned. As a kid, I watched countless YouTube videos, trying to learn more about what went on behind the scenes in coding and technology. This hands-on tinkering and curiosity fueled my passion for tech. In high school, I took coding classes, and it became clear to me that coding was more than just a hobby, it was the profession I wanted to pursue. My brother, who is also a Computer Science graduate with a master's degree, has been a big inspiration and a mentor to me. He has guided me not only in the field but also in learning new tools and technologies, motivating me to continue my path in tech.
         </p>
-        <p style="text-indent: 20px;">
+        <p>
                 This passion brought me to Auburn University, where I am working on my degree in Computer Science and a minor in Statistics with a focus on data science. My academic journey has allowed me to explore fields like software development and machine learning. My love for coding and technology has only grown stronger as I’ve built projects and tackled challenges that combine problem-solving with data-driven insights.
         </p>
-        <p style="text-indent: 20px;">
+        <p>
                 Throughout my journey, I’ve gained experience with multiple programming languages, tools, and technologies, applying them to both personal projects and academic work. I’m always eager to learn more and advance my skills, and in the future, I hope to pursue a master’s degree to deepen my knowledge and expertise. With each new project, my desire to contribute to real-world technological advancements grows, and my goal is to use my skills to make meaningful contributions in the tech industry.
         </p>
       </div>
@@ -120,40 +122,46 @@
       <h2>Projects</h2>
 
       <div class="project-card">
+        <h3><a href="https://github.com/jwilliams2023/Covid-Classifier" target="_blank">Covid-Classifier</a></h3>
+        <p>A PyTorch model that predicts the mortality risk of COVID-19 patients based on health and demographic info, using GPU acceleration for faster training.</p>
+        <p><strong>Tools:</strong> Python, Pytorch, Git</p>
+      </div>
+
+      <div class="project-card">
         <h3><a href="https://github.com/jwilliams2023/Grubhub-Price-Match-Submission-OCR" target="_blank">Grubhub-Price-Match-Submission-OCR</a></h3>
         <p>Automated the Grubhub price match process using Python. Utilized Tesseract for character recognition along with Selenium for website automation.</p>
-        <p><strong>Languages:</strong> Python</p>
+        <p><strong>Tools:</strong> Python, Selenium, Tesseract OCR, Git</p>
       </div>
     
       <div class="project-card">
         <h3><a href="https://github.com/jwilliams2023/Credit-Card-Rewards-Tracker" target="_blank">Credit-Card-Rewards-Tracker</a></h3>
-        <p>Currently focused on tracking sign-up bonuses. Credit Card Rewards Tracker website helps users optimize their credit card spending.</p>
-        <p><strong>Languages:</strong> JavaScript</p>
+        <p>Credit Card Rewards Tracker website helps users optimize their credit card spending. Currently focused on tracking sign-up bonuses.</p>
+        <p><strong>Tools:</strong> React, JavaScript, HTML, Tailwind CSS/DasiyUI, PostgreSQL, Vite, Git</p>
       </div>
     
       <div class="project-card">
         <h3><a href="https://github.com/jwilliams2023/Youtube-Video-Downloader" target="_blank">Youtube-Video-Downloader</a></h3>
         <p>YouTube video downloader with an interactive GUI built using Tkinter. Utilizes the Pytube library to download videos or audio to any local directory.</p>
-        <p><strong>Languages:</strong> Python</p>
+        <p><strong>Tools:</strong> Python, Pytube, Git</p>
       </div>
     
       <div class="project-card">
         <h3><a href="https://github.com/jwilliams2023/Matrix-Algorithms-Analysis-Programming-Assignment" target="_blank">Matrix-Algorithms-Analysis-Programming-Assignment</a></h3>
         <p>Implemented matrix manipulation and multiplication algorithms in Python using a Jupyter Notebook, with NumPy for calculations and Pandas for data handling.</p>
-        <p><strong>Languages:</strong> Jupyter Notebook</p>
+        <p><strong>Tools:</strong> Jupyter, Python, Anaconda, Git</p>
       </div>
     
       <div class="hidden-content">
         <div class="project-card">
           <h3><a href="https://github.com/jwilliams2023/Web-Dev-Portfolio-Website" target="_blank">Web-Dev-Portfolio-Website</a></h3>
           <p>Practice portfolio website</p>
-          <p><strong>Languages:</strong> CSS</p>
+          <p><strong>Tools:</strong> HTML, CSS, JavaScript, Git</p>
         </div>
       
         <div class="project-card">
           <h3><a href="https://github.com/jwilliams2023/CPT-Kattis-Problems" target="_blank">CPT-Kattis-Problems</a></h3>
           <p>Competitive Programming Team problems, mostly Kattis and Leetcode challenges.</p>
-          <p><strong>Languages:</strong> Python</p>
+          <p><strong>Tools:</strong>Python, Kattis</p>
         </div>
       </div>
 
@@ -179,6 +187,7 @@
             </div>
           </div>
           <ul>
+            <li> Human-Centered AI Laboratory under Dr. Cheryl Seals</li>
             <li> PASER - Practical and Actionable Software Engineering Research Group under Dr. Akond Rahman</li>
           </ul>
         </div>
@@ -244,7 +253,7 @@
     
   </main>
     <footer class="footer">
-      <p>Designed and Coded by Joseph Williams in 2024</p>
+      <p>Designed & coded by Joseph Williams in 2024</p>
       <ul class="footer-links">
         <li><a href="#introduction">Back to Top</a></li>
         <li><a href="#about">About Me</a></li>
