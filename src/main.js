@@ -1,4 +1,3 @@
-import './style.css';
 
 export function toggleContent() {
     // Select all toggle buttons
