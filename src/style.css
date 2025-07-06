@@ -155,6 +155,7 @@ ul li {
   z-index: 1000;
   position: sticky;
   padding: 0 5px;
+  border-radius: 0 0 10px 10px;
 }
 
 .navbar h1 {
@@ -368,6 +369,22 @@ p img {
 }
 
 .project-card h3 a:visited {
+  color: var(--color-link-visited) !important;
+}
+
+/* Ensure achievement links are styled as links */
+.achievement-links a {
+  color: var(--color-accent) !important;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.achievement-links a:hover {
+  color: var(--color-accent-hover) !important;
+  text-decoration: underline;
+}
+
+.achievement-links a:visited {
   color: var(--color-link-visited) !important;
 }
 

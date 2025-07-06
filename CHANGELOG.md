@@ -8,6 +8,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+### Changed
+- Slightly rounded the bottom corners of the navbar for a softer look
+
+### Added
+- Added Databricks credential links to Achievements section
+- Styled Databricks and competition award links in blue for consistency
+
 ## [1.1.0] - 2025-01-27
 ### Added
 - Floating dark/light mode toggle button with theme persistence

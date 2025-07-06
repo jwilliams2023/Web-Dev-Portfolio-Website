@@ -94,7 +94,8 @@ export function summarizeWithAI() {
             showSummary("AI summarization is currently unavailable. Please read the full journey above!", '');
         }
     })
-    .catch(() => {
+    .catch((error) => {
+        console.error('AI summarization error:', error);
         showSummary("AI summarization is currently unavailable. Please read the full journey above!", '');
     })
     .finally(() => {
@@ -182,4 +183,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const isLight = document.body.classList.contains('light-theme');
         setTheme(isLight ? 'dark' : 'light');
     });
+
+    // Hamburger menu logic for mobile nav
+    const hamburger = document.getElementById('hamburger-menu');
+    const navLinks = document.getElementById('mobile-nav-links');
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+    }
 });
