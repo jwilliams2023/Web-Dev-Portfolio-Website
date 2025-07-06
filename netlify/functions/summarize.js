@@ -1,5 +1,3 @@
-const fetch = require('node-fetch');
-
 exports.handler = async (event) => {
   // Only allow POST requests
   if (event.httpMethod !== 'POST') {
@@ -19,6 +17,7 @@ exports.handler = async (event) => {
       };
     }
 
+    // Use native fetch (no import needed)
     const response = await fetch('https://api-inference.huggingface.co/models/facebook/bart-large-cnn', {
       method: 'POST',
       headers: {
