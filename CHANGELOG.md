@@ -15,6 +15,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Added Databricks credential links to Achievements section
 - Styled Databricks and competition award links in blue for consistency
 
+## [1.1.1] - 2025-01-27
+### Fixed
+- **CRITICAL**: Fixed navbar theme switching - navbar now properly adapts to light/dark mode
+- Updated all hardcoded colors in navbar to use CSS theme variables
+- Fixed navbar text readability in both light and dark themes
+- Added smooth transitions for navbar background and border color changes
+- Fixed version number display in footer (was showing "v{version}" placeholder)
+- Updated resume files to latest versions
+
+### Changed
+- Updated general typography (h1, h2, h3, p, ul) to use theme variables instead of hardcoded colors
+- Improved overall theme consistency across all text elements
+- Added subtle border to navbar for better visual definition in light mode
+
 ## [1.1.0] - 2025-01-27
 ### Added
 - Floating dark/light mode toggle button with theme persistence
