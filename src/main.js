@@ -163,6 +163,20 @@ function setTheme(theme) {
   }
 }
 
+// Get system preference
+function getSystemTheme() {
+  return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+}
+
+// Get preferred theme (saved preference or system preference)
+function getPreferredTheme() {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    return savedTheme; // User has explicitly chosen a theme
+  }
+  return getSystemTheme(); // Use system preference
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     toggleContent();
     
@@ -177,11 +191,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Theme toggle logic
-    const savedTheme = localStorage.getItem('theme');
-    setTheme(savedTheme === 'light' ? 'light' : 'dark');
+    setTheme(getPreferredTheme());
+    
+    // Set initial button title
+    const button = document.getElementById('theme-toggle');
+    const isSystemTheme = !localStorage.getItem('theme');
+    const currentTheme = document.body.classList.contains('light-theme') ? 'light' : 'dark';
+    button.title = isSystemTheme ? 
+        `Switch to ${currentTheme === 'light' ? 'dark' : 'light'} mode (currently following system)` : 
+        `Switch to ${currentTheme === 'light' ? 'dark' : 'light'} mode`;
+    
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
+        // Only auto-switch if user hasn't explicitly set a preference
+        if (!localStorage.getItem('theme')) {
+            setTheme(e.matches ? 'light' : 'dark');
+        }
+    });
+    
     document.getElementById('theme-toggle').addEventListener('click', () => {
         const isLight = document.body.classList.contains('light-theme');
         setTheme(isLight ? 'dark' : 'light');
+        
+        // Update button title to show current mode
+        const button = document.getElementById('theme-toggle');
+        const isSystemTheme = !localStorage.getItem('theme');
+        const currentTheme = isLight ? 'dark' : 'light';
+        button.title = isSystemTheme ? 
+            `Switch to ${currentTheme} mode (currently following system)` : 
+            `Switch to ${currentTheme} mode`;
     });
 
     // Hamburger menu logic for mobile nav
