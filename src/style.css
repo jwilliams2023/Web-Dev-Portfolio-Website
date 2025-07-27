@@ -797,6 +797,17 @@ section {
 .about-actions button {
   margin: 0;
 }
+
+.about-main-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1.5rem 0 1rem 0;
+  flex-wrap: wrap;
+}
+.about-main-actions button {
+  margin: 0;
+}
 @media (max-width: 600px) {
   .about-actions {
     flex-direction: column;

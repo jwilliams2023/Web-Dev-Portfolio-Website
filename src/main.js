@@ -91,12 +91,61 @@ export function summarizeWithAI() {
             localStorage.setItem(cacheKey, data.summary);
             showSummary(data.summary, '');
         } else {
-            showSummary("AI summarization is currently unavailable. Please read the full journey above!", '');
+            showSummary("LLM summarization is currently unavailable. Please read the full journey above!", '');
         }
     })
     .catch((error) => {
         console.error('AI summarization error:', error);
-        showSummary("AI summarization is currently unavailable. Please read the full journey above!", '');
+        showSummary("LLM summarization is currently unavailable. Please read the full journey above!", '');
+    })
+    .finally(() => {
+        button.textContent = originalText;
+        button.disabled = false;
+    });
+}
+
+export function summarizeAboutMe() {
+    console.log('LLM summarize About Me function called!'); // Debug log
+    const button = document.querySelector('.about-main-actions .ai-summarize-button');
+    const originalText = button.textContent;
+
+    // Get the main About Me text (first two paragraphs and quote)
+    const aboutMeText = `I am a Computer Science Major + Statistics Minor student at Auburn University, expected to graduate in Fall 2025. Currently, I am a Data Science Intern at Protective Life, where I apply my skills in data engineering and machine learning to real-world business challenges. Previously, I worked as a SecDevOps research assistant primarily under Dr. Akond Rahman and also as a research assistant in Human-Computer Interaction AI research under Dr. Cheryl Seals. I am continually expanding my skills and learning new technologies through meaningful and personal projects. A quote I found and realized I try to live by: "You're never going to learn something as profoundly as when it's purely out of curiosity" — Christopher Nolan`;
+
+    // Use a hash of the about me text as the cache key
+    const cacheKey = `ai_summary_about_me_${hashString(aboutMeText)}`;
+    const cachedSummary = localStorage.getItem(cacheKey);
+    if (cachedSummary) {
+        showAboutMeSummary(cachedSummary, 'Loaded from cache');
+        return;
+    }
+
+    // Show loading state
+    button.textContent = 'Summarizing...';
+    button.disabled = true;
+    showAboutMeSummary('', 'Generating summary...');
+
+    fetch('/.netlify/functions/summarize', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            text: aboutMeText
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data && data.summary) {
+            localStorage.setItem(cacheKey, data.summary);
+            showAboutMeSummary(data.summary, '');
+        } else {
+            showAboutMeSummary("LLM summarization is currently unavailable. Please read the full About Me section above!", '');
+        }
+    })
+    .catch((error) => {
+        console.error('AI summarization error:', error);
+        showAboutMeSummary("LLM summarization is currently unavailable. Please read the full About Me section above!", '');
     })
     .finally(() => {
         button.textContent = originalText;
@@ -117,7 +166,38 @@ function showSummary(summary, statusMsg) {
     }
     
     summaryDiv.innerHTML = `
-        <h4 style="font-weight: bold; color: #bfcfff;">AI Summary:</h4>
+        <h4 style="font-weight: bold; color: #bfcfff;">LLM Summary:</h4>
+        <p>${summary ? '"' + summary + '"' : ''}</p>
+        <button onclick="this.parentElement.remove();" style="background: none; border: none; color: #bfcfff; text-decoration: underline; cursor: pointer; font-size: 1rem; padding: 0; margin-top: 10px;">Dismiss</button>
+        ${statusMsg ? `<div style=\"font-size:0.95rem;color:#bfcfff;margin-top:8px;\">(${statusMsg})</div>` : ''}
+    `;
+
+    // Scroll to the summary card
+    setTimeout(() => {
+        summaryDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 100);
+}
+
+function showAboutMeSummary(summary, statusMsg) {
+    // Create or update summary display
+    let summaryDiv = document.getElementById('ai-summary-about-me');
+    if (!summaryDiv) {
+        summaryDiv = document.createElement('div');
+        summaryDiv.id = 'ai-summary-about-me';
+        summaryDiv.className = 'ai-summary';
+        // Insert after the about-main-actions section
+        const aboutMainActions = document.querySelector('.about-main-actions');
+        if (aboutMainActions) {
+            aboutMainActions.parentNode.insertBefore(summaryDiv, aboutMainActions.nextSibling);
+        } else {
+            // Fallback to inserting after the about section
+            const aboutSection = document.querySelector('#about');
+            aboutSection.appendChild(summaryDiv);
+        }
+    }
+    
+    summaryDiv.innerHTML = `
+        <h4 style="font-weight: bold; color: #bfcfff;">LLM Summary of About Me:</h4>
         <p>${summary ? '"' + summary + '"' : ''}</p>
         <button onclick="this.parentElement.remove();" style="background: none; border: none; color: #bfcfff; text-decoration: underline; cursor: pointer; font-size: 1rem; padding: 0; margin-top: 10px;">Dismiss</button>
         ${statusMsg ? `<div style=\"font-size:0.95rem;color:#bfcfff;margin-top:8px;\">(${statusMsg})</div>` : ''}
@@ -182,6 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Make the AI function globally available
     window.summarizeWithAI = summarizeWithAI;
+    window.summarizeAboutMe = summarizeAboutMe;
     window.clearStatus = clearStatus;
     window.loadGitHubProjects = loadGitHubProjects;
 
